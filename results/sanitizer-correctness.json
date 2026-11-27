@@ -1,0 +1,987 @@
+{
+  "passed": true,
+  "binary_sha256": "1565928c6568a4fa4bd2b523f2358df7532d300317cfaae79767b5b027db1af0",
+  "invalid_fixture_cases": 4,
+  "cases": [
+    {
+      "variant": "siso",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 1000,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 4.768371582e-07,
+          "max_scaled": 0.001028098445,
+          "max_elementwise_scaled": 0.00188954243,
+          "step": 797,
+          "index": 18
+        },
+        "matrix": {
+          "max_abs": 2.831220627e-07,
+          "max_scaled": 0.001668797899,
+          "max_elementwise_scaled": 0.002447591116,
+          "step": 966,
+          "index": 121
+        },
+        "phase": {
+          "max_abs": 9.536743164e-07,
+          "max_scaled": 0.001686558784,
+          "max_elementwise_scaled": 0.001686558784,
+          "step": 955,
+          "index": 4
+        },
+        "prev_b": {
+          "max_abs": 3.337860107e-06,
+          "max_scaled": 0.004214023899,
+          "max_elementwise_scaled": 0.03250621947,
+          "step": 959,
+          "index": 21
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "siso-small",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "siso",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 1,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 1000,
+        "bytes": 1529788
+      },
+      "passed": true
+    },
+    {
+      "variant": "siso",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 1000,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 4.768371582e-07,
+          "max_scaled": 0.001110611755,
+          "max_elementwise_scaled": 0.002303424121,
+          "step": 872,
+          "index": 4
+        },
+        "matrix": {
+          "max_abs": 2.831220627e-07,
+          "max_scaled": 0.001668797899,
+          "max_elementwise_scaled": 0.002447591116,
+          "step": 966,
+          "index": 121
+        },
+        "phase": {
+          "max_abs": 9.536743164e-07,
+          "max_scaled": 0.001686558784,
+          "max_elementwise_scaled": 0.001686558784,
+          "step": 955,
+          "index": 4
+        },
+        "prev_b": {
+          "max_abs": 3.337860107e-06,
+          "max_scaled": 0.004214023899,
+          "max_elementwise_scaled": 0.03250621947,
+          "step": 959,
+          "index": 21
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "siso-small",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "siso",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 1,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 1000,
+        "bytes": 1529788
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 1000,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 1.907348633e-06,
+          "max_scaled": 0.001475799012,
+          "max_elementwise_scaled": 0.005893388007,
+          "step": 266,
+          "index": 0
+        },
+        "matrix": {
+          "max_abs": 3.576278687e-07,
+          "max_scaled": 0.00143904383,
+          "max_elementwise_scaled": 0.003062536163,
+          "step": 637,
+          "index": 195
+        },
+        "phase": {
+          "max_abs": 4.768371582e-07,
+          "max_scaled": 0.002382695081,
+          "max_elementwise_scaled": 0.002382695081,
+          "step": 620,
+          "index": 3
+        },
+        "prev_b": {
+          "max_abs": 2.264976501e-06,
+          "max_scaled": 0.002283152952,
+          "max_elementwise_scaled": 0.01579018899,
+          "step": 963,
+          "index": 130
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-small",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "nonzero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 1000,
+        "bytes": 2491948
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 1000,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 1.907348633e-06,
+          "max_scaled": 0.001429268844,
+          "max_elementwise_scaled": 0.004638442623,
+          "step": 611,
+          "index": 6
+        },
+        "matrix": {
+          "max_abs": 3.427267075e-07,
+          "max_scaled": 0.001413874841,
+          "max_elementwise_scaled": 0.003062536163,
+          "step": 988,
+          "index": 190
+        },
+        "phase": {
+          "max_abs": 4.768371582e-07,
+          "max_scaled": 0.002382695081,
+          "max_elementwise_scaled": 0.002382695081,
+          "step": 620,
+          "index": 3
+        },
+        "prev_b": {
+          "max_abs": 2.264976501e-06,
+          "max_scaled": 0.002283152952,
+          "max_elementwise_scaled": 0.01579018899,
+          "step": 963,
+          "index": 130
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-small",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "nonzero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 1000,
+        "bytes": 2491948
+      },
+      "passed": true
+    },
+    {
+      "variant": "siso",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 2,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "matrix": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "phase": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_b": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "siso-impulse",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "siso",
+        "mode": "operator",
+        "scenario": "impulse",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 1,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 2,
+        "bytes": 4844
+      },
+      "passed": true
+    },
+    {
+      "variant": "siso",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 2,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "matrix": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "phase": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_b": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "siso-impulse",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "siso",
+        "mode": "operator",
+        "scenario": "impulse",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 1,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 2,
+        "bytes": 4844
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 2,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "matrix": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "phase": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_b": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-impulse",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "impulse",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 2,
+        "bytes": 8924
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 2,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "matrix": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "phase": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_b": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-impulse",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "impulse",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 2,
+        "bytes": 8924
+      },
+      "passed": true
+    },
+    {
+      "variant": "siso",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 100,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 3.576278687e-07,
+          "max_scaled": 0.0006507549842,
+          "max_elementwise_scaled": 0.001431354254,
+          "step": 53,
+          "index": 1
+        },
+        "matrix": {
+          "max_abs": 5.960464478e-08,
+          "max_scaled": 0.000348472294,
+          "max_elementwise_scaled": 0.0005264299763,
+          "step": 44,
+          "index": 30
+        },
+        "phase": {
+          "max_abs": 1.192092896e-07,
+          "max_scaled": 0.0008321123818,
+          "max_elementwise_scaled": 0.0008321123818,
+          "step": 65,
+          "index": 9
+        },
+        "prev_b": {
+          "max_abs": 5.36441803e-07,
+          "max_scaled": 0.0007271344527,
+          "max_elementwise_scaled": 0.004305051192,
+          "step": 72,
+          "index": 19
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "siso-full-rotary",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "siso",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "nonzero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 1,
+          "groups": 2,
+          "angle_pairs": 5,
+          "mixer_width": 0
+        },
+        "steps": 100,
+        "bytes": 160636
+      },
+      "passed": true
+    },
+    {
+      "variant": "siso",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 100,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 2.384185791e-07,
+          "max_scaled": 0.000699255898,
+          "max_elementwise_scaled": 0.001277191046,
+          "step": 81,
+          "index": 19
+        },
+        "matrix": {
+          "max_abs": 8.940696716e-08,
+          "max_scaled": 0.0005278836595,
+          "max_elementwise_scaled": 0.0007445143808,
+          "step": 48,
+          "index": 82
+        },
+        "phase": {
+          "max_abs": 1.192092896e-07,
+          "max_scaled": 0.0008321123818,
+          "max_elementwise_scaled": 0.0008321123818,
+          "step": 65,
+          "index": 9
+        },
+        "prev_b": {
+          "max_abs": 5.36441803e-07,
+          "max_scaled": 0.0007271344527,
+          "max_elementwise_scaled": 0.004305051192,
+          "step": 72,
+          "index": 19
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "siso-full-rotary",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "siso",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "nonzero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 1,
+          "groups": 2,
+          "angle_pairs": 5,
+          "mixer_width": 0
+        },
+        "steps": 100,
+        "bytes": 160636
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 100,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 2.980232239e-08,
+          "max_scaled": 0.0002247632772,
+          "max_elementwise_scaled": 0.0002729993097,
+          "step": 26,
+          "index": 14
+        },
+        "matrix": {
+          "max_abs": 4.470348358e-08,
+          "max_scaled": 0.0003092335913,
+          "max_elementwise_scaled": 0.0004058369197,
+          "step": 73,
+          "index": 93
+        },
+        "phase": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_b": {
+          "max_abs": 7.152557373e-07,
+          "max_scaled": 0.0007503192515,
+          "max_elementwise_scaled": 0.00350554908,
+          "step": 20,
+          "index": 10
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-no-rotary",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "one-active-rank",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 0,
+          "mixer_width": 0
+        },
+        "steps": 100,
+        "bytes": 248716
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 100,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 4.470348358e-08,
+          "max_scaled": 0.0002923536795,
+          "max_elementwise_scaled": 0.0003935982711,
+          "step": 29,
+          "index": 13
+        },
+        "matrix": {
+          "max_abs": 4.470348358e-08,
+          "max_scaled": 0.0003092335913,
+          "max_elementwise_scaled": 0.0004058369197,
+          "step": 73,
+          "index": 93
+        },
+        "phase": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        },
+        "prev_b": {
+          "max_abs": 7.152557373e-07,
+          "max_scaled": 0.0007503192515,
+          "max_elementwise_scaled": 0.00350554908,
+          "step": 20,
+          "index": 10
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-no-rotary",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "one-active-rank",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 0,
+          "mixer_width": 0
+        },
+        "steps": 100,
+        "bytes": 248716
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "scalar",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 100,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 1.192092896e-06,
+          "max_scaled": 0.0009885392711,
+          "max_elementwise_scaled": 0.00254374012,
+          "step": 74,
+          "index": 18
+        },
+        "matrix": {
+          "max_abs": 2.384185791e-07,
+          "max_scaled": 0.0008778776115,
+          "max_elementwise_scaled": 0.001569084147,
+          "step": 52,
+          "index": 1
+        },
+        "phase": {
+          "max_abs": 1.192092896e-07,
+          "max_scaled": 0.001178660066,
+          "max_elementwise_scaled": 0.001178660066,
+          "step": 61,
+          "index": 1
+        },
+        "prev_b": {
+          "max_abs": 7.152557373e-07,
+          "max_scaled": 0.0008014075923,
+          "max_elementwise_scaled": 0.004475912697,
+          "step": 67,
+          "index": 31
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-trap-extremes",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "trap-extremes",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 100,
+        "bytes": 252748
+      },
+      "passed": true
+    },
+    {
+      "variant": "mimo4",
+      "backend": "neon",
+      "scope": "operator",
+      "threads": 1,
+      "steps": 100,
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "tensor_rtol": 0.0002,
+      "errors": {
+        "output": {
+          "max_abs": 9.536743164e-07,
+          "max_scaled": 0.0008354200734,
+          "max_elementwise_scaled": 0.002905958833,
+          "step": 92,
+          "index": 4
+        },
+        "matrix": {
+          "max_abs": 2.384185791e-07,
+          "max_scaled": 0.0008778776115,
+          "max_elementwise_scaled": 0.001569084147,
+          "step": 52,
+          "index": 1
+        },
+        "phase": {
+          "max_abs": 1.192092896e-07,
+          "max_scaled": 0.001178660066,
+          "max_elementwise_scaled": 0.001178660066,
+          "step": 61,
+          "index": 1
+        },
+        "prev_b": {
+          "max_abs": 7.152557373e-07,
+          "max_scaled": 0.0008014075923,
+          "max_elementwise_scaled": 0.004475912697,
+          "step": 67,
+          "index": 31
+        },
+        "prev_x": {
+          "max_abs": 0,
+          "max_scaled": 0,
+          "max_elementwise_scaled": 0,
+          "step": 0,
+          "index": 0
+        }
+      },
+      "fixture": "mimo-trap-extremes",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mimo",
+        "mode": "operator",
+        "scenario": "trap-extremes",
+        "initial": "zero",
+        "dimensions": {
+          "H": 4,
+          "P": 5,
+          "N": 10,
+          "R": 4,
+          "groups": 2,
+          "angle_pairs": 2,
+          "mixer_width": 0
+        },
+        "steps": 100,
+        "bytes": 252748
+      },
+      "passed": true
+    }
+  ]
+}
