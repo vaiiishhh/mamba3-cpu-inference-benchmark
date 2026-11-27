@@ -1,0 +1,1443 @@
+{
+  "work_model": {
+    "flops": "FMA counts as two. Pointwise arithmetic counts the ordinary scalar operations alongside the contractions. SIMD horizontal reductions, branching, and the internal FLOPs of library math functions are excluded.",
+    "library_math_calls": "Modeled calls assume the softplus evaluates exp and log1p.",
+    "logical_bytes": "One read per visible input and weight, one output write, and one read and one write per persistent state element. This is a minimum traffic model."
+  },
+  "paging": {
+    "timed_loops_with_fault_counts": 120,
+    "total_timed_major_faults": 0,
+    "system_swap_before": {
+      "swapins": 3602918,
+      "swapouts": 4537320
+    },
+    "system_swap_after_native": {
+      "swapins": 3602994,
+      "swapouts": 4537320
+    },
+    "system_swap_after_stream": {
+      "swapins": 3602998,
+      "swapouts": 4537320
+    }
+  },
+  "measurements": [
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 1,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 1026.3416327145396,
+        "sd": 15.937470311046837,
+        "min": 1009.9191028225806,
+        "max": 1041.7451395833332,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22167552,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 283.2938472324441
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 1,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 803.8657091697859,
+        "sd": 8.777913696031748,
+        "min": 796.2182231012657,
+        "max": 813.4504188311689,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19513344,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 245.78565292574905
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 2,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 947.4816316429217,
+        "sd": 9.386181259391245,
+        "min": 939.4112238805969,
+        "max": 957.7819602272726,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22265856,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 278.7365458378264
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 2,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 780.0226553497943,
+        "sd": 0.4784529561252238,
+        "min": 779.492026234568,
+        "max": 780.4211682098764,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19595264,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 241.83173966643116
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 3,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 914.8344744047619,
+        "sd": 11.297441443445775,
+        "min": 901.8002982142856,
+        "max": 921.8151047794117,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22298624,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 286.179444986643
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 3,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 784.3756534541349,
+        "sd": 36.99540875751891,
+        "min": 754.2990707831325,
+        "max": 825.6857861842105,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19628032,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 248.28919663142975
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 4,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 936.2744404100529,
+        "sd": 57.229634709063916,
+        "min": 902.6861607142857,
+        "max": 1002.354498015873,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22331392,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 290.6351578860512
+    },
+    {
+      "scope": "mixer",
+      "backend": "neon",
+      "threads": 4,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 759.6577356131845,
+        "sd": 5.351291891492508,
+        "min": 753.5601159638555,
+        "max": 763.5729176829269,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19644416,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 252.15497174419508
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 1,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 1514.0158158633374,
+        "sd": 15.215157411678113,
+        "min": 1498.2997291666668,
+        "max": 1528.674923780488,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22167552,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 283.2938472324441
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 1,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 938.272716713801,
+        "sd": 26.693764407648764,
+        "min": 922.6564797794117,
+        "max": 969.0951115384615,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19496960,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 245.78565292574905
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 2,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 1204.37211172771,
+        "sd": 20.204577421087606,
+        "min": 1188.6148773584907,
+        "max": 1227.150632352941,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22265856,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 278.7365458378264
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 2,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 851.3936478754782,
+        "sd": 12.56847745402693,
+        "min": 839.881735,
+        "max": 864.8029383561644,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19595264,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 241.83173966643116
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 3,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 1089.892569683908,
+        "sd": 4.01118281243078,
+        "min": 1085.4596788793103,
+        "max": 1093.2716400862068,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22282240,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 286.179444986643
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 3,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 824.5837053898879,
+        "sd": 15.464054389291348,
+        "min": 810.6263349358974,
+        "max": 841.20764,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19611648,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 248.28919663142975
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 4,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 1083.449832018765,
+        "sd": 92.13378167354453,
+        "min": 1025.2632356557378,
+        "max": 1189.6753136792452,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22315008,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 13725696,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 19489984,
+      "arithmetic_intensity": 0.7121499945818324,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 290.6351578860512
+    },
+    {
+      "scope": "mixer",
+      "backend": "scalar",
+      "threads": 4,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 820.7054852386041,
+        "sd": 44.84774548185922,
+        "min": 787.023503125,
+        "max": 871.6120503472222,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19644416,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 9007104,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 16909504,
+      "arithmetic_intensity": 0.5345101784180069,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 252.15497174419508
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 1,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 41.9202473610598,
+        "sd": 0.9074177417879007,
+        "min": 41.325092283542624,
+        "max": 42.96465137457045,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4390912,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 23.14912354228553
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 1,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 178.8393093212129,
+        "sd": 3.316291194226302,
+        "min": 175.01043121508383,
+        "max": 180.80431141618496,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22790144,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 27.41065722579173
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 1,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 75.86662915761504,
+        "sd": 0.12118400443028927,
+        "min": 75.78328287878787,
+        "max": 76.00564504860267,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19873792,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 24.151016530090853
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 2,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 33.87274572920568,
+        "sd": 2.0091440936979237,
+        "min": 31.555175227158003,
+        "max": 35.122691362359554,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4472832,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 22.776727410021937
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 2,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 107.26659447603812,
+        "sd": 1.2454690455397397,
+        "min": 105.9139524111675,
+        "max": 108.36595537261697,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22888448,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 26.96970650404876
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 2,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 52.698887589274946,
+        "sd": 1.5829470027927073,
+        "min": 51.12715913736713,
+        "max": 54.292819552951386,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19972096,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 23.76250311058227
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 3,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 28.02388379732152,
+        "sd": 0.1678753325699682,
+        "min": 27.830172640249334,
+        "max": 28.126993814664868,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4505600,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 23.384917787581944
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 3,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 80.6178564218213,
+        "sd": 0.025150248105398787,
+        "min": 80.59337403350516,
+        "max": 80.64362516108247,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22904832,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 27.689858951154164
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 3,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 45.26325751646041,
+        "sd": 0.4766460750727644,
+        "min": 44.71298658798284,
+        "max": 45.54803195557174,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19955712,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 24.39701593933206
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 4,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 25.530286495850188,
+        "sd": 0.038056914970328384,
+        "min": 25.501525754793963,
+        "max": 25.573440875613745,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4538368,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 23.74901269957883
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 4,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 76.12560172725799,
+        "sd": 16.984087955926032,
+        "min": 66.19629074074074,
+        "max": 95.73661619448698,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22937600,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 28.12098027685668
+    },
+    {
+      "scope": "operator",
+      "backend": "neon",
+      "threads": 4,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 42.34622122261154,
+        "sd": 7.937345687026058,
+        "min": 37.70752601025332,
+        "max": 51.51124897034597,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 20004864,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 24.776868862147758
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 1,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 157.2114905626606,
+        "sd": 0.5992727196870341,
+        "min": 156.53679687500002,
+        "max": 157.6819505667506,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4390912,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 23.14912354228553
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 1,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 657.7276967836258,
+        "sd": 4.32600896735677,
+        "min": 654.32915625,
+        "max": 662.5974236842105,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22790144,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 27.41065722579173
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 1,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 198.82999044628116,
+        "sd": 0.2581982884002258,
+        "min": 198.5873511904762,
+        "max": 199.1013467356688,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19873792,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 68.79776666666666,
+        "sd": 1.6628611527524912,
+        "min": 67.0217,
+        "max": 70.3177,
+        "n": 3
+      },
+      "stream_projected_us": 24.151016530090853
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 2,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 95.74328513807832,
+        "sd": 0.48841859833981166,
+        "min": 95.39908060213415,
+        "max": 96.30229198767334,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4489216,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 22.776727410021937
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 2,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 353.1113706516219,
+        "sd": 0.20399716807740587,
+        "min": 352.8809108146067,
+        "max": 353.2688029661017,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22904832,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 26.96970650404876
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 2,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 118.97509995576058,
+        "sd": 5.419066072716031,
+        "min": 114.75390871559634,
+        "max": 125.086,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19972096,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 69.9226,
+        "sd": 0.560455252451085,
+        "min": 69.5453,
+        "max": 70.56660000000001,
+        "n": 3
+      },
+      "stream_projected_us": 23.76250311058227
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 3,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 73.2956982282231,
+        "sd": 2.1132237889217445,
+        "min": 70.85924518686296,
+        "max": 74.63005921837708,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4521984,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 23.384917787581944
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 3,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 252.87719502171217,
+        "sd": 0.20836446188366248,
+        "min": 252.66021925403226,
+        "max": 253.07572115384613,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22904832,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 27.689858951154164
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 3,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 90.11143224792198,
+        "sd": 0.09477923880267186,
+        "min": 90.0186451438849,
+        "max": 90.20808531746032,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 19988480,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 68.10406666666667,
+        "sd": 1.6255785718732085,
+        "min": 66.2324,
+        "max": 69.163,
+        "n": 3
+      },
+      "stream_projected_us": 24.39701593933206
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 4,
+      "variant": "mamba2",
+      "latency_us": {
+        "mean": 71.26902187581132,
+        "sd": 14.498958999834786,
+        "min": 60.71989283980583,
+        "max": 87.80221506320225,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 4521984,
+      "persistent_state_bytes": 786432,
+      "main_state_bytes": 786432,
+      "contraction_flops": 983040,
+      "pointwise_flops": 10776,
+      "modeled_library_math_calls": 1560,
+      "logical_bytes": 1592608,
+      "arithmetic_intensity": 0.6240179629890092,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 23.74901269957883
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 4,
+      "variant": "mimo4",
+      "latency_us": {
+        "mean": 232.69123138519606,
+        "sd": 63.41775785618288,
+        "min": 195.8634765625,
+        "max": 305.91933475609756,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 22937600,
+      "persistent_state_bytes": 844800,
+      "main_state_bytes": 786432,
+      "contraction_flops": 4915200,
+      "pointwise_flops": 154096,
+      "modeled_library_math_calls": 8552,
+      "logical_bytes": 1885792,
+      "arithmetic_intensity": 2.6881522458468377,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 28.12098027685668
+    },
+    {
+      "scope": "operator",
+      "backend": "scalar",
+      "threads": 4,
+      "variant": "siso",
+      "latency_us": {
+        "mean": 87.42911853653233,
+        "sd": 22.16245500479497,
+        "min": 74.44052574404762,
+        "max": 113.0191410198556,
+        "n": 3
+      },
+      "heads": 24,
+      "head_width": 64,
+      "state_width": 128,
+      "groups": 1,
+      "peak_rss_bytes": 20004864,
+      "persistent_state_bytes": 807936,
+      "main_state_bytes": 786432,
+      "contraction_flops": 1376256,
+      "pointwise_flops": 31198,
+      "modeled_library_math_calls": 3938,
+      "logical_bytes": 1661536,
+      "arithmetic_intensity": 0.8470800512297055,
+      "stream_triad_gb_s": {
+        "mean": 67.05996666666667,
+        "sd": 1.4660866356847246,
+        "min": 66.0976,
+        "max": 68.74730000000001,
+        "n": 3
+      },
+      "stream_projected_us": 24.776868862147758
+    }
+  ],
+  "mimo_vs_siso": [
+    {
+      "backend": "neon",
+      "threads": 1,
+      "change_pct": 135.72855589730926,
+      "paired_change_pct": {
+        "mean": 135.72717286627685,
+        "sd": 4.243200456837538,
+        "min": 130.85109628529565,
+        "max": 138.58073251507687,
+        "n": 3
+      }
+    },
+    {
+      "backend": "neon",
+      "threads": 2,
+      "change_pct": 103.5462215294817,
+      "paired_change_pct": {
+        "mean": 103.65283807944746,
+        "sd": 5.802361831964648,
+        "min": 99.59537239897524,
+        "max": 110.29894376773069,
+        "n": 3
+      }
+    },
+    {
+      "backend": "neon",
+      "threads": 3,
+      "change_pct": 78.1088256683776,
+      "paired_change_pct": {
+        "mean": 78.12206469013934,
+        "sd": 1.8865936875554725,
+        "min": 76.94150674197557,
+        "max": 80.29788708532159,
+        "n": 3
+      }
+    },
+    {
+      "backend": "neon",
+      "threads": 4,
+      "change_pct": 79.76952731406723,
+      "paired_change_pct": {
+        "mean": 85.89310586608866,
+        "sd": 62.71729808363617,
+        "min": 28.989103496202738,
+        "max": 153.13828125252854,
+        "n": 3
+      }
+    },
+    {
+      "backend": "scalar",
+      "threads": 1,
+      "change_pct": 230.79903856924804,
+      "paired_change_pct": {
+        "mean": 230.7979140556886,
+        "sd": 1.8513141914631353,
+        "min": 229.1373063248219,
+        "max": 232.79404411256394,
+        "n": 3
+      }
+    },
+    {
+      "backend": "scalar",
+      "threads": 2,
+      "change_pct": 196.79434670189139,
+      "paired_change_pct": {
+        "mean": 197.19664940046462,
+        "sd": 13.254510297472267,
+        "min": 182.35325949679205,
+        "max": 207.84903705688635,
+        "n": 3
+      }
+    },
+    {
+      "backend": "scalar",
+      "threads": 3,
+      "change_pct": 180.62720646363232,
+      "paired_change_pct": {
+        "mean": 180.6275754044888,
+        "sd": 0.5262376545459687,
+        "min": 180.08600156501532,
+        "max": 181.1370030612352,
+        "n": 3
+      }
+    },
+    {
+      "backend": "scalar",
+      "threads": 4,
+      "change_pct": 166.14843576166885,
+      "paired_change_pct": {
+        "mean": 181.94036177076902,
+        "sd": 118.82137429913021,
+        "min": 73.30115482658822,
+        "max": 308.8317299054236,
+        "n": 3
+      }
+    }
+  ]
+}

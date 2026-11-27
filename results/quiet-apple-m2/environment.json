@@ -1,0 +1,148 @@
+{
+  "start_utc": "2026-11-27T16:16:53.563732+00:00",
+  "os": "macOS-27.2.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "cpu": "Apple M2",
+  "threads": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "detected_workers": 4,
+  "capabilities": {
+    "simd": "neon",
+    "openmp": true
+  },
+  "modes": [
+    "scalar",
+    "simd"
+  ],
+  "include_mixer": true,
+  "affinity": "unavailable (macOS scheduler placement)",
+  "cpu_indices": [],
+  "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=36569187)\t69%; charging; (no estimate) present: true",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin",
+  "build_flags": [
+    "CMAKE_BUILD_TYPE:STRING=Release",
+    "CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++",
+    "CMAKE_CXX_FLAGS:STRING=",
+    "CMAKE_CXX_FLAGS_DEBUG:STRING=-g",
+    "CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG",
+    "CMAKE_CXX_FLAGS_RELEASE:STRING=-O3 -DNDEBUG",
+    "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG",
+    "OpenMP_CXX_FLAGS:UNINITIALIZED=-Xpreprocessor -fopenmp",
+    "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1",
+    "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL=1",
+    "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1",
+    "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1",
+    "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1"
+  ],
+  "git_commit": null,
+  "binary_sha256": "51685f9d5ba6cade3716d3bb1521896f1b02d5258a14a672b24632b4da808d44",
+  "repeats": 3,
+  "minimum_seconds": 0.5,
+  "working_states": 1,
+  "seed": 1234,
+  "order_seed": 20261127,
+  "fixtures": {
+    "siso": {
+      "name": "siso-official-mixer.bin",
+      "sha256": "c4712d1b774d6eaf91da04d8a599281c5f5d2dc760efd4449652a242ba3aae66",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "reference_backend": "upstream_eager",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "state-spaces/mamba3-siso-187m",
+        "mode": "mixer",
+        "scenario": "random",
+        "initial": "zero",
+        "dimensions": {
+          "H": 24,
+          "P": 64,
+          "N": 128,
+          "R": 1,
+          "groups": 1,
+          "angle_pairs": 32,
+          "mixer_width": 768
+        },
+        "steps": 1000,
+        "bytes": 830193900,
+        "revision": "6792c27c00f3bb41506db1066dcd1c51bb0f4b02",
+        "sha256": "b462d55e9f8ab9746be641d4de550b51bf65e55ab662e66835588b5a458c95ec",
+        "variant": "siso",
+        "layer": 0
+      }
+    },
+    "mimo4": {
+      "name": "mimo-official-mixer.bin",
+      "sha256": "8923fd50b2dae63b75129433692ed9075ff21640ae59be0f587b05453f719a71",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "reference_backend": "upstream_eager",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "state-spaces/mamba3-mimo-187m",
+        "mode": "mixer",
+        "scenario": "random",
+        "initial": "zero",
+        "dimensions": {
+          "H": 24,
+          "P": 64,
+          "N": 128,
+          "R": 4,
+          "groups": 1,
+          "angle_pairs": 32,
+          "mixer_width": 768
+        },
+        "steps": 1000,
+        "bytes": 869583084,
+        "revision": "8fd6e9eb7b795f2e15d7f6353251d0137980c43e",
+        "sha256": "369db3fb9deedfc98baa95ac9166baf862dd7e03b3143afaf0d19e46a220daf6",
+        "variant": "mimo",
+        "layer": 0
+      }
+    },
+    "mamba2": {
+      "name": "mamba2-full.bin",
+      "sha256": "c520704e56ba727a699c2440b7266f2b271c9b843334838fcc8beeb3cca85a42",
+      "reference": {
+        "fixture_format": "MAMBA3V1",
+        "reference_commit": "e9594ce1c732d97440f0332fdc43170a2294dbfa",
+        "torch": "2.10.0",
+        "seed": 137,
+        "model": "mamba2",
+        "mode": "operator",
+        "scenario": "random",
+        "initial": "zero",
+        "dimensions": {
+          "H": 24,
+          "P": 64,
+          "N": 128,
+          "R": 1,
+          "groups": 1,
+          "angle_pairs": 0,
+          "mixer_width": 0
+        },
+        "steps": 1000,
+        "bytes": 806866572
+      }
+    }
+  },
+  "swap_before": {
+    "swapins": 3602918,
+    "swapouts": 4537320
+  },
+  "swap_after_native": {
+    "swapins": 3602994,
+    "swapouts": 4537320
+  },
+  "end_utc": "2026-11-27T16:18:11.032198+00:00",
+  "swap_after_stream": {
+    "swapins": 3602998,
+    "swapouts": 4537320
+  }
+}
