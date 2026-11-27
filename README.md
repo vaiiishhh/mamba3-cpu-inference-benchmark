@@ -73,14 +73,12 @@ The runner matches validation to the executable by SHA-256. It interleaves three
 
 The work model counts one fused multiply-add as two FLOPs. It divides modeled arithmetic by logical bytes for tensor reads, writes and parameters at the tested boundary. Library transcendental calls are tracked separately. STREAM estimates a DRAM-resident bandwidth limit. The hot state can be served from cache, so the logical byte model and the STREAM prediction cannot determine actual DRAM traffic.
 
-`build/mamba-run/results/` contains correctness evidence, run metadata, raw timings, phase timings, STREAM data and the statistical summary. `build/mamba-run/output/` contains the conclusion and the comparison plot. Regenerate the analysis from the saved data with the following command.
+`build/mamba-run/results/` contains correctness evidence, run metadata, raw timings, phase timings, STREAM data and the statistical summary. `build/mamba-run/output/` contains the conclusion and the comparison plot. Regenerate the analysis from the published quiet-machine run with the following command.
 
 ```sh
-python3 scripts/analyze_mamba_bonus.py --results build/mamba-run/results --output build/mamba-replot
+python3 scripts/analyze_mamba_bonus.py --results results/quiet-apple-m2 --output build/mamba-replot
 ```
 
 ## Apple M2 results
 
 The primary quiet-machine run started on November 27, 2026 at 21:46 IST. With one NEON worker, Mamba-2 averaged 41.9 ± 0.9 µs, Mamba-3 SISO 75.9 ± 0.1 µs, and Mamba-3 MIMO-4 178.8 ± 3.3 µs per step over three repeats (mean ± sample SD). Rank-4 MIMO took 2.36× as long as SISO with the same 768 KiB main recurrent matrix. Across the sweep, 120 timed repeats and five profiles recorded zero major page faults. macOS logged 76 system-wide swap-ins during the native sweep and four more during STREAM, with zero swap-outs. [Conclusion](results/quiet-apple-m2/conclusion.md) · [Raw timings](results/quiet-apple-m2/raw.csv) · [STREAM](results/quiet-apple-m2/stream.csv) · [Correctness](results/quiet-apple-m2/correctness.json) · [Comparison plot](results/quiet-apple-m2/comparison.png)
-
-The archived instrumented run recorded zero major page faults across 120 native timed repeats. System swap-outs stayed flat and swap-ins rose by 68 pages. The peak native RSS was 22.9 MB. Rank-4 MIMO took 2.31× as long as SISO with one NEON worker. [Run conditions](results/environment.json) · [Raw timings](results/raw.csv) · [STREAM measurements](results/stream.csv) · [Correctness evidence](results/correctness.json)
